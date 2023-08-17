@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">TP2_GRUPO_7</string>
+
+    <!--FORMULARIO DE NAVEGACION-->
+    <string name="tv_EjercicioControles">EjercicioControles - Grupo 7</string>
+    <string name="tv_Menu_Agregar">Agregar contactos</string>
+    <string name="tv_Menu_Listado">Listado de contactos</string>
+    <string name="tv_Contactos">Contactos</string>
+    <!--FORMULARIO DE CARGA 1-->
+    <string name="tv_FormularioContactoTitulo">FORMULARIO DE CONTACTO</string>
+    <string name="tv_FormularioContactoDescrip1">Este es un formulario destinado al registro de personas, sus datos personales e intereses.</string>
+    <string name="tv_Nombre">NOMBRE</string>
+    <string name="tx_Nombre">Nombre</string>
+    <string name="tv_Apellido">APELLIDO</string>
+    <string name="tx_Apellido">Apellido</string>
+    <string name="tv_Telefono">TELÉFONO</string>
+    <string name="tx_Telefono">Teléfono</string>
+    <string name="tv_Email">EMAIL</string>
+    <string name="tx_Email">Email</string>
+    <string name="tv_Direccion">DIRECCIÓN</string>
+    <string name="tx_Direccion">Dirección</string>
+    <string name="tv_FechaNacimiento">FECHA DE NACIMIENTO</string>
+    <string name="tx_FechaNacimiento">Fecha nacimiento</string>
+    <string name="btn_Continuar">CONTINUAR</string>
+    <string name="sp_Opc_casa">Casa</string>
+    <string name="sp_Opc_Trabajo">Trabajo</string>
+    <string name="sp_Opc_Movil">Movil</string>
+    <!--FORMULARIO DE CARGA 1-->
+    <string name="tv_FormularioContactoDescrip2">A continuación, por favor se pide completar más datos personales.</string>
+    <string name="tv_Estudios">NIVEL DE ESTUDIOS ALCANZADOS</string>
+    <string name="tv_Estudios_Pri_Inc">Primario incompleto</string>
+    <string name="tv_Estudios_Pri_Com">Primario completo</string>
+    <string name="tv_Estudios_Sec_Inc">Secundario incompleto</string>
+    <string name="tv_Estudios_Sec_Com">Secundario completo</string>
+    <string name="tv_Estudios_Otros">Otros</string>
+    <string name="tv_Intereses">INTERESES</string>
+    <string name="tv_Intereses_Deporte">Deporte</string>
+    <string name="tv_Intereses_Musica">Musica</string>
+    <string name="tv_Intereses_Arte">Arte</string>
+    <string name="tv_Intereses_Tecnologia">Tecnologia</string>
+    <string name="tv_Recibir_Inf_Tit">DESEA RECIBIR INFORMACIÓN?</string>
+    <string name="tv_Recibir_Inf_Opc">SI</string>
+    <string name="btn_Guardar">GUARDAR</string>
+</resources>
