@@ -20,13 +20,15 @@
         app:title="@string/tv_EjercicioControles" />
 
     <TableLayout
-        android:layout_width="353dp"
-        android:layout_height="669dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="350dp"
+        android:layout_height="580dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
             android:layout_width="match_parent"
@@ -67,35 +69,35 @@
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="29dp"
                     android:text="@string/tv_Estudios" />
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/rb_estudioPI"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Estudios_Pri_Inc" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/rb_estudioPC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Estudios_Pri_Com" />
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/rb_estudioSI"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Estudios_Sec_Inc" />
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/rb_estudioSC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Estudios_Sec_Com" />
 
                 <RadioButton
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/rb_estudioOt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Estudios_Otros" />
@@ -110,7 +112,7 @@
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="@string/tv_Intereses" />
         </TableRow>
 
@@ -123,13 +125,13 @@
                 android:layout_height="match_parent">
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/cb_deporte"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Intereses_Deporte" />
 
                 <CheckBox
-                    android:id="@+id/checkBox2"
+                    android:id="@+id/cb_musica"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Intereses_Musica" />
@@ -145,13 +147,13 @@
                 android:layout_height="72dp">
 
                 <CheckBox
-                    android:id="@+id/checkBox3"
+                    android:id="@+id/cb_arte"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Intereses_Arte" />
 
                 <CheckBox
-                    android:id="@+id/checkBox4"
+                    android:id="@+id/cb_tecnologia"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Intereses_Tecnologia" />
@@ -173,7 +175,7 @@
                     android:text="@string/tv_Recibir_Inf_Tit" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/sw_notificacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tv_Recibir_Inf_Opc" />

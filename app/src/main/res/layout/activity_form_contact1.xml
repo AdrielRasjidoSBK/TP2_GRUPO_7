@@ -20,13 +20,16 @@
         app:title="@string/tv_EjercicioControles" />
 
     <TableLayout
-        android:layout_width="352dp"
-        android:layout_height="636dp"
+        android:layout_width="356dp"
+        android:layout_height="600dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:layout_constraintVertical_bias="0.926">
 
         <TableRow
@@ -83,7 +86,7 @@
                         android:layout_height="match_parent">
 
                         <EditText
-                            android:id="@+id/editTextText3"
+                            android:id="@+id/txt_Nombre"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -109,7 +112,7 @@
                         android:layout_height="match_parent">
 
                         <EditText
-                            android:id="@+id/editTextText4"
+                            android:id="@+id/txt_Apellido"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -135,7 +138,7 @@
                         android:layout_height="match_parent">
 
                         <EditText
-                            android:id="@+id/editTextText6"
+                            android:id="@+id/txt_Telefono"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -146,7 +149,7 @@
                             tools:layout_editor_absoluteY="20dp" />
 
                         <Spinner
-                            android:id="@+id/spinner2"
+                            android:id="@+id/itemTelefono"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </TableRow>
@@ -174,7 +177,7 @@
                             android:layout_height="match_parent">
 
                             <EditText
-                                android:id="@+id/editTextText7"
+                                android:id="@+id/txt_Email"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
@@ -185,7 +188,7 @@
                                 tools:layout_editor_absoluteY="13dp" />
 
                             <Spinner
-                                android:id="@+id/spinner3"
+                                android:id="@+id/itemEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content" />
 
@@ -211,7 +214,7 @@
                         android:layout_height="match_parent">
 
                         <EditText
-                            android:id="@+id/editTextText8"
+                            android:id="@+id/txt_Direccion"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -238,7 +241,7 @@
                         android:layout_height="match_parent">
 
                         <EditText
-                            android:id="@+id/editTextDate"
+                            android:id="@+id/txt_FechaNacimiento"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -253,9 +256,10 @@
                         android:layout_height="match_parent">
 
                         <Button
-                            android:id="@+id/button"
+                            android:id="@+id/btnContinuar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:onClick="Continuar"
                             android:text="@string/btn_Continuar"
                             tools:layout_editor_absoluteX="277dp"
                             tools:layout_editor_absoluteY="1dp" />
