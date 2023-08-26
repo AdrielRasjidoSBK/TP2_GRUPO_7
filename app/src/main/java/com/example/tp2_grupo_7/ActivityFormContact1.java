@@ -93,6 +93,7 @@ public class ActivityFormContact1 extends AppCompatActivity {
             return;
         }
 
+
         Intent siguienteFormulario = new Intent(this, ActivityFormContact2.class);
         siguienteFormulario.putExtra("datonombre",valor_nombre);
         siguienteFormulario.putExtra("datoapellido",valor_apellido);
