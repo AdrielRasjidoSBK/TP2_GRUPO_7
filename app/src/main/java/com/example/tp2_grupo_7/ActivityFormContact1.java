@@ -15,6 +15,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ActivityFormContact1 extends AppCompatActivity {
 
     private View view;
@@ -55,6 +59,39 @@ public class ActivityFormContact1 extends AppCompatActivity {
         String valor_fechaNacimiento = et_fechaNacimiento.getText().toString();
         String valor_telefono_Item = sp_telefono.getSelectedItem().toString();
         String valor_email_Item = sp_telefono.getSelectedItem().toString();
+
+        // Validación de números en nombre y apellido
+        if (valor_nombre.matches(".*\\d.*") ) {
+            Toast.makeText(this, "El nombre no puede contener números", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (valor_apellido.matches(".*\\d.*") ){
+            Toast.makeText(this, "El apellido no puede contener números", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // Validación de formato de teléfono (permite guiones)
+        if (!valor_telefono.matches("^((\\d{4}-\\d{4})|(\\d{2}-\\d{4}-\\d{4}))$")) {
+            Toast.makeText(this, "El formato de teléfono debe ser ####-#### o ##--####-####", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // Validación de formato de email
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(valor_email).matches()) {
+            Toast.makeText(this, "El correo electrónico no es válido", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // Validación de fecha de nacimiento
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date fechaNacimiento = dateFormat.parse(valor_fechaNacimiento);
+
+        } catch (ParseException e) {
+            Toast.makeText(this, "La fecha de nacimiento no es válida", Toast.LENGTH_LONG).show();
+            return;
+        }
 
         Intent siguienteFormulario = new Intent(this, ActivityFormContact2.class);
         siguienteFormulario.putExtra("datonombre",valor_nombre);

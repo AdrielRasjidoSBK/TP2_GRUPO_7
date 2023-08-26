@@ -41,4 +41,8 @@
     <string name="tv_Recibir_Inf_Tit">DESEA RECIBIR INFORMACIÓN?</string>
     <string name="tv_Recibir_Inf_Opc">SI</string>
     <string name="btn_Guardar">GUARDAR</string>
+
+    <!--FORMULARIO DE CARGA 2-->
+    <string name="tv2_contactos">Selecciona un nombre</string>
+
 </resources>

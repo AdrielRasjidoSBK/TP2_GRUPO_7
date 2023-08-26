@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActivityFormList">
+
+    <item android:id="@+id/configuracion"
+        android:title="Configuracion"/>
+
+    <item android:id="@+id/info"
+        android:title="Información"/>
+</menu>
