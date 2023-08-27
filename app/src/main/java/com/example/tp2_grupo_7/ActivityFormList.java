@@ -3,7 +3,9 @@ package com.example.tp2_grupo_7;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +22,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.PrivilegedAction;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class ActivityFormList extends AppCompatActivity {
 
@@ -34,47 +38,30 @@ public class ActivityFormList extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //intento Alan
         lv1 = (ListView)findViewById(R.id.lv_contactos);
-        tvdatos = (TextView)findViewById(R.id.tvDatos);
 
-        ArrayList <String> lineasContactos = new ArrayList<>();
-        String contactos [] = fileList();
-        if(ExistenContactos(contactos,"contactos.txt")){
-            try {
-                InputStreamReader contacto = new InputStreamReader(openFileInput("contactos.txt"));
-                BufferedReader br = new BufferedReader(contacto);
-                //Lee la primera linea para saber si existe algun contenido
-                String linea = br.readLine();
-                while (linea != null){
-                    lineasContactos.add(linea);
-                    linea = br.readLine();
-                }
-                br.close();
-                contacto.close();
-            }catch (IOException e){
+        SharedPreferences preferences = getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        Map<String, ?> allEntries = preferences.getAll(); // Obtener todos los datos guardados
+        List<String> contactosList = new ArrayList<>();
 
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            String identificador = entry.getKey();
+            if (identificador.startsWith("agenda_contacto")) {
+                String cadenaContacto = entry.getValue().toString();
+                contactosList.add(cadenaContacto);
             }
-
-            contactosItems = lineasContactos.toArray(new String[0]);
-            ArrayAdapter <String> adapter = new ArrayAdapter<String>(this,R.layout.list_item_contacto);
-            lv1.setAdapter(adapter);
-
-            //AL SELECCIONAR UN ITEM
-            lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    tvdatos.setText("Datos: " + lv1.getItemIdAtPosition(i));
-                }
-            });
         }
+
+        if (contactosList.isEmpty()) {
+            contactosList.add("No se han encontrado contactos guardados.");
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, contactosList);
+        lv1.setAdapter(adapter);
+
     }
 
-    private boolean ExistenContactos(String contactos[],String NombreArchivo){
-        for(int i = 0; i < contactos.length; i++)
-            if(NombreArchivo.equals(contactos[i]))
-                return true;
-        return false;
-    }
 
     @Override public boolean onCreateOptionsMenu(Menu mimenu){
         getMenuInflater().inflate(R.menu.menu_en_activity,mimenu);

@@ -104,13 +104,11 @@ public class ActivityFormContact2 extends AppCompatActivity {
             //INTERES - TECNOLOGIA
             Intereses += " TECNOLOGIA ";
         }
-        //SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
-        //SharedPreferences.Editor obj_editor = preferencias.edit();
 
-        //Nombre identificador, variable a guardar
-        //obj_editor.putString("1",NivelEstudio);
-        //obj_editor.commit();
+        SharedPreferences preferencias = getSharedPreferences("agenda", Context.MODE_PRIVATE);
+        SharedPreferences.Editor obj_editor = preferencias.edit();
 
+        String identificador = "agenda_contacto_" + valor_nombre;
         String cadenaContacto = "";
 
         cadenaContacto += valor_nombre + " - ";
@@ -122,39 +120,15 @@ public class ActivityFormContact2 extends AppCompatActivity {
         cadenaContacto += "Estudios: " + NivelEstudio + " - " + Intereses + ".";
 
 
-        try {
-            FileInputStream fileInputStream = openFileInput("contactos.txt");
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        //Nombre identificador, variable a guardar
+        obj_editor.putString(identificador, cadenaContacto);
+        obj_editor.commit();
 
-            StringBuilder existingContent = new StringBuilder();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                existingContent.append(line).append("\n");
-            }
 
-            bufferedReader.close();
-
-            String updatedContent;
-            if (!existingContent.toString().isEmpty()) {
-                updatedContent = existingContent.toString() + "\n" + cadenaContacto;
-            } else {
-                updatedContent = cadenaContacto;
-            }
-
-            OutputStreamWriter contacto = new OutputStreamWriter(openFileOutput("contactos.txt", Activity.MODE_PRIVATE));
-            contacto.write(updatedContent);
-
-            contacto.flush();
-            contacto.close();
-
-        } catch (IOException e) {
-            // Manejo de excepciones
-        }
         Toast.makeText(this,"El contacto ha sido guardado",Toast.LENGTH_SHORT).show();
 
-        //Intent FormularioOriginal = new Intent(this, ActivityFormContact1.class);
-        //startActivity(FormularioOriginal);
+        Intent FormularioOriginal = new Intent(this, ActivityFormContact1.class);
+        startActivity(FormularioOriginal);
     }
 
     @Override public boolean onCreateOptionsMenu(Menu mimenu){
